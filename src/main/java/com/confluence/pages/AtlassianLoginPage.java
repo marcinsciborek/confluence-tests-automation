@@ -4,15 +4,14 @@ import com.confluence.model.AtlassianUsers;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
-import lombok.Getter;
 
-@Getter
+
 public class AtlassianLoginPage extends BasePage {
 
     public AtlassianLoginPage(Page page) {
-        super(page);
+        super();
+        this.page = page;
     }
-
 
     public final Locator signIn = page.locator ("//span[contains(text(),'Sign in')]");
     public final Locator inputEmailField = page.locator ("//input[@id='username']");

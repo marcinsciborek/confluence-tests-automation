@@ -1,10 +1,8 @@
 package com.confluence.pages;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 
 public enum AtlassianSubtabs {
     ACCOUNT_SETTINGS("Account settings"),
@@ -23,6 +21,9 @@ public enum AtlassianSubtabs {
 
     private String value;
 
+    AtlassianSubtabs(String value) {
+        this.value = value;
+    }
     public String getValue() {
         return value;
     }

@@ -1,20 +1,27 @@
 package com.confluence.pages;
 
-import com.microsoft.playwright.*;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
+
 public class BasePage {
     private static Playwright playwright;
     private static Browser browser;
-    final Page page;
+    Page page;
 
+    public Page getPage() {
+        return page;
+    }
 
-    private void initialize() {
+    public void initialize() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch();
+        page = browser.newPage();
     }
 
     public void click(String selector) {

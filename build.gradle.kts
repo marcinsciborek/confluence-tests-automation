@@ -18,18 +18,11 @@ dependencies {
     testImplementation("io.qameta.allure:allure-junit5:2.17.3")
 
     implementation("com.microsoft.playwright:playwright:1.40.0")
-    implementation("io.qameta.allure:allure-selenide:2.25.0")
+    implementation("io.github.uchagani:allure-playwright-java:1.1.0")
     implementation("org.springframework:spring-context:6.1.2")
 
     compileOnly("org.projectlombok:lombok:1.18.30")
 
-}
-
-tasks.test {
-    useTestNG()
-    testLogging {
-        events("passed", "skipped", "failed")
-    }
 }
 
 tasks.test {
